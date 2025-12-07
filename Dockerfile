@@ -6,7 +6,7 @@ USER root
 RUN apt-get update -y && apt-get install libgl1 sqlite3 -y
 
 USER 1000
-RUN mamba install -c conda-forge leafmap localtileserver segment-geospatial sam2==0.4.1 -y && \
+RUN mamba install -c conda-forge leafmap localtileserver segment-geospatial xarray -y && \
     pip install -U segment-geospatial jupyter-server-proxy && \
     mamba update -c conda-forge sqlite -y && \
     jupyter server extension enable --sys-prefix jupyter_server_proxy && \
